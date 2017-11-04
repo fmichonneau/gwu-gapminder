@@ -34,3 +34,11 @@ mean_gdp_continent <- gapminder %>%
 pop_size_china <- gapminder %>% 
   filter(country == "China") %>% 
   select(year, pop)
+
+## Get the maximum population size per country
+## for the year 2007
+max_pop_size_2007 <- gapminder %>% 
+  filter(year == 2007) %>% 
+  group_by(country) %>% 
+  summarize(max_pop = max(pop))
+
