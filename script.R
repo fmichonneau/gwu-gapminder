@@ -21,3 +21,13 @@ life_exp_continent <- gapminder %>%
 life_exp_canada <- gapminder %>% 
   filter(country == "Canada") %>% 
   select(year, lifeExp)
+
+## Get the mean gdp per continent for the year 1972
+mean_gdp_continent <- gapminder %>%
+  filter(year == 1972) %>% 
+  group_by(continent) %>% 
+  summarize(
+      mean_gdp = mean(gdpPercap)
+  )
+
+
