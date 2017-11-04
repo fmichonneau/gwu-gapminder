@@ -30,4 +30,7 @@ mean_gdp_continent <- gapminder %>%
       mean_gdp = mean(gdpPercap)
   )
 
-
+## Get the population size through time for China
+pop_size_china <- gapminder %>% 
+  filter(country == "China") %>% 
+  select(year, pop)
